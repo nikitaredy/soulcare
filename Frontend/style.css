@@ -1,0 +1,170 @@
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #000000;
+      overflow-x: hidden;
+
+    }
+    html {
+        scroll-behavior: smooth;
+      }
+    .navo{
+        color: inherit; /* Inherits the color of the parent element */
+        text-decoration: none; /* Removes the underline */
+        font-weight: bold; /* Optional: Makes the text bold */
+        cursor: pointer; /* Changes the cursor to a pointer */
+      }
+      
+      /* Optional: Add hover effect */
+      .navo:hover {
+        color: #8ac7e3; /* Darken the text color on hover */
+        text-decoration: underline; /* Adds an underline on hover */
+      }
+      
+      
+
+    header {
+      background-color: #000000;
+      padding: 3em;
+      font-size: x-large;
+      position: relative;
+      left: 10%;
+      color: white;
+    }
+
+    header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header li {
+      display: inline-block;
+      margin: 0 1em;
+    }
+
+   .main {
+
+      justify-content: center;
+      align-items: center;
+      min-height: 80%;
+      background-color: #000000; 
+    }
+
+    .imp {
+        width: 80%; /* Adjust the width as needed */
+        margin: 0 auto; /* Centers the blue box horizontally */
+        text-align: center;
+      background-color: #007bff;
+      background-position: center;
+      padding: 3em;
+      border-radius: 36px;
+      background-image:url(vector.png); /* Set the PNG as background */
+       background-size:contain; /* Ensure the background covers the container */
+            background-position: center;
+      text-align: center;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .imp img {
+            width:80%; /* Image takes up the full width of the container */
+            height:50%; /* Maintain the aspect ratio */
+            object-fit:contain; /* Cover the container without stretching */
+        }
+
+    .imp h1, .imp h2 {
+      margin-bottom: 1em;
+      font-size: 90px;
+      text-align: center;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    .imp p {
+      line-height: 1.6;
+      font-size: 24px;
+      text-align:center;
+      padding-bottom: 5%;
+
+    }
+
+    .buttons {
+      margin-top: 2em;
+    }
+
+    button {
+      background-color: #fff;
+      color: #007bff;
+      border: none;
+      padding: 2em 4em;
+      font-size: 1.1em;
+      border-radius: 35px;
+      cursor: pointer; /* Pointer cursor on hover */
+      transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+      margin: 0 1em;
+    }
+    .button:hover {
+            background-color: black; /* Change background to black */
+            color: white; /* Change text to white */
+            border-color: black; /* Optional: Change border to match background */
+        }
+        
+
+    .sc{
+        background-color: #000000;
+    }
+
+    .sc h2 {
+    padding-top: 20px;
+    font-size: 56px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    }
+
+    .sc p {
+    font-size:25px;
+    text-align: center;
+    color: #555454;
+    margin-bottom: 40px;
+    }
+
+    .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+     }
+
+   .feature-card {
+    background-color: #1c1c1c; /* Dark background for each box */
+    color: white; /* Text color */
+    padding: 30px;
+    width:20%; /* S a fixed width */
+    align-items: center;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+    cursor: pointer;
+    }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        transform: scale(1.05); /* Slightly enlarges the box on hover */
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Glowing effect on hover */
+    }
+
+    .feature-card h2 {
+    font-size: 3rem;
+    font-weight: 400;
+     margin-bottom: 10px;
+    }
+
+    .feature-card p {
+    font-size: 18px;
+    color: #808080;
+     }
+    
+   
