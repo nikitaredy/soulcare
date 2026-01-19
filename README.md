@@ -1,388 +1,466 @@
-# 🧠 SoulCare
+# 💙 SoulCare - Mental Wellness AI Chatbot
 
-<div align="center">
+**Your safe space to talk and be heard.**
 
-**AI-Powered Mental Health Companion**
-
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![NLP](https://img.shields.io/badge/NLP-Powered-green.svg)](https://en.wikipedia.org/wiki/Natural_language_processing)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-*Your compassionate AI companion for mental wellness and emotional support*
-
-</div>
+SoulCare is an AI-powered mental wellness chatbot that uses NLP (Natural Language Processing) to detect emotions, provide empathetic responses, and offer mental health support. Built with real machine learning models and designed with care.
 
 ---
 
-## 💙 Overview
+## 🌟 Features
 
-**SoulCare** is an intelligent mental health chatbot application that leverages advanced Natural Language Processing (NLP) to provide empathetic, 24/7 emotional support and mental wellness guidance. Built with cutting-edge AI technology, SoulCare offers a safe, judgment-free space for users to express their feelings, manage stress, and improve their mental well-being.
+### 🧠 **Advanced NLP Capabilities**
+- **Emotion Detection**: Uses DistilBERT transformer model to detect 6 emotions
+  - Sadness
+  - Joy
+  - Love
+  - Anger
+  - Fear
+  - Surprise
+- **Sentiment Analysis**: Analyzes positive, negative, and neutral sentiments
+- **Intent Classification**: Understands user intent (greeting, seeking help, sharing feelings, etc.)
+- **Crisis Detection**: Automatically detects crisis keywords and provides emergency resources
 
-Whether you're dealing with anxiety, stress, depression, or simply need someone to talk to, SoulCare is here to listen, understand, and support you on your mental health journey.
+### 💬 **Conversational Features**
+- Natural, empathetic responses
+- Multiple response variations for authentic conversation
+- Context-aware replies based on emotion and intent
+- Casual, supportive tone ("hey love", "babe", etc.)
+- Session-based conversation memory
 
-## ✨ Key Features
+### 🎨 **Beautiful UI**
+- Modern gradient design
+- Smooth animations
+- Typing indicators
+- Emotion tags on messages
+- Mobile-responsive
+- Real-time backend status indicator
 
-### 🤖 **Intelligent NLP Chatbot**
-- Advanced natural language understanding to interpret emotions and context
-- Empathetic, human-like conversational responses
+### 🔒 **Safety First**
+- Crisis keyword detection
+- Emergency helpline numbers (India & US)
+- Immediate resource provision for at-risk users
+- Non-judgmental safe space
 
-### 🎯 **Mental Health Support**
-- **Cognitive Behavioral Therapy (CBT)**: Evidence-based therapeutic approaches
-- **Mindfulness & Meditation**: Guided relaxation exercises
-- **Crisis Support**: Immediate resources and helpline information
+---
 
-### 🔒 **Privacy & Security**
-- End-to-end encrypted conversations
-- No personal data storage without consent
+## 🚀 Installation & Setup
 
-### 📊 **Personalized Insights**
-- Emotion pattern analysis
-- Mental health progress tracking
+### Prerequisites
+- Python 3.8 or higher
+- Modern web browser (Chrome, Firefox, Edge)
 
-### 🌍 **Accessibility**
-- 24/7 availability
-- Multi-language support
-
-## 🏗️ Architecture
-
-```mermaid
-graph TB
-    A[User Interface] --> B[Chat Interface]
-    B --> C[NLP Engine]
-    C --> D[Intent Recognition]
-    C --> E[Sentiment Analysis]
-    C --> F[Entity Extraction]
-    D --> G[Response Generator]
-    E --> G
-    F --> G
-    G --> H[Therapeutic Response Module]
-    H --> I[Mood Tracker]
-    H --> J[Resource Library]
-    H --> K[Crisis Detection]
-    K --> L[Emergency Protocol]
-    G --> M[Conversational AI]
-    M --> B
+### Step 1: Clone/Download the Project
+```bash
+git clone <your-repo-url>
+cd SOULCARE
 ```
+
+### Step 2: Install Backend Dependencies
+```bash
+cd Backend
+pip install -r requirements.txt
+```
+
+**Note**: First run will download the DistilBERT model (~250MB) automatically.
+
+### Step 3: Start the Backend Server
+```bash
+python app.py
+```
+
+You should see:
+```
+🚀 Initializing Mental Wellness Chatbot Backend...
+✅ Emotion model loaded successfully
+✅ All components loaded!
+
+🌟 Mental Wellness Chatbot Backend Running!
+📡 Server: http://localhost:5000
+💚 Ready to help and support
+```
+
+### Step 4: Open the Frontend
+```bash
+cd ../Frontend
+# Double-click chat.html or open it in your browser
+```
+
+Or simply open `soulcare_chat.html` in any browser.
+
+---
+
+## 📁 Project Structure
+
+```
+SOULCARE/
+├── Backend/
+│   ├── app.py              # Main Flask application with NLP models
+│   └── requirements.txt    # Python dependencies
+│
+└── Frontend/
+    └── chat.html           # Complete chat interface (HTML + CSS + JS)
+```
+
+---
 
 ## 🛠️ Tech Stack
 
-### **Natural Language Processing**
-- **NLP Framework**: spaCy / NLTK / Transformers
-- **Sentiment Analysis**: VADER / TextBlob / Custom trained models
-- **Intent Classification**: Rasa / Dialogflow / Custom NLU
-- **Language Models**: BERT / GPT / BiLSTM networks
+### Backend
+- **Flask** - Web framework
+- **Transformers** - Hugging Face transformers for DistilBERT
+- **PyTorch** - Deep learning framework
+- **Flask-CORS** - Cross-origin resource sharing
 
-### **Backend**
-- Python 3.8+
-- FastAPI / Flask for REST API
-- PostgreSQL / MongoDB for data storage
-- Redis for session management
+### Frontend
+- **HTML5** - Structure
+- **CSS3** - Styling with gradients and animations
+- **Vanilla JavaScript** - Fetch API for backend communication
 
-### **Frontend**
-- React / Next.js
-- TypeScript
-- Tailwind CSS
-- WebSocket for real-time chat
-
-### **AI/ML Libraries**
-- TensorFlow / PyTorch
-- scikit-learn
-- Hugging Face Transformers
-- LangChain for conversation chains
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.8 or higher
-- Node.js 16+ (for frontend)
-- PostgreSQL or MongoDB
-- pip and npm/yarn
-
-### Installation
-
-#### Backend Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/soulcare.git
-   cd soulcare
-   ```
-
-2. **Create and activate virtual environment:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install Python dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Download NLP models:**
-   ```bash
-   python -m spacy download en_core_web_sm
-   python scripts/download_models.py
-   ```
-
-5. **Configure environment variables:**
-   
-   Create a `.env` file in the root directory:
-   ```env
-   # Database
-   DATABASE_URL=postgresql://user:password@localhost:5432/soulcare
-   
-   # API Keys
-   OPENAI_API_KEY=your-openai-key
-   
-   # Security
-   SECRET_KEY=your-secret-key
-   JWT_SECRET=your-jwt-secret
-   
-   # NLP Configuration
-   NLP_MODEL=en_core_web_sm
-   SENTIMENT_MODEL=cardiffnlp/twitter-roberta-base-sentiment
-   ```
-
-6. **Initialize the database:**
-   ```bash
-   python manage.py migrate
-   python manage.py init_db
-   ```
-
-7. **Run the backend server:**
-   ```bash
-   uvicorn main:app --reload
-   # OR
-   python app.py
-   ```
-
-   The API will be available at `http://localhost:8000`
-
-#### Frontend Setup
-
-1. **Navigate to the frontend directory:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # OR
-   yarn install
-   ```
-
-3. **Configure environment:**
-   
-   Create `.env.local`:
-   ```env
-   NEXT_PUBLIC_API_URL=http://localhost:8000
-   NEXT_PUBLIC_WS_URL=ws://localhost:8000/ws
-   ```
-
-4. **Run the development server:**
-   ```bash
-   npm run dev
-   # OR
-   yarn dev
-   ```
-
-   The app will be available at `http://localhost:3000`
-
-## 💬 Usage
-
-### Starting a Conversation
-
-1. **Open the SoulCare app** in your browser
-2. **Create an account** or continue anonymously
-3. **Start chatting** with the AI companion
-4. Share your feelings, thoughts, or concerns
-5. Receive personalized support and guidance
-
-### Example Interactions
-
-```
-User: "I've been feeling really anxious lately"
-SoulCare: "I'm sorry to hear you're experiencing anxiety. That can be really 
-challenging. Would you like to talk about what's been making you feel this way, 
-or would you prefer some techniques to help manage the anxiety right now?"
-
-User: "I can't sleep because I'm worried about work"
-SoulCare: "Sleep difficulties due to work stress are very common. Let's work 
-through this together. First, let's try a quick breathing exercise to help calm 
-your mind. Are you in a comfortable position to try this?"
-```
-
-### Available Commands
-
-- `/mood` - Track your current mood
-- `/breathing` - Start a breathing exercise
-- `/meditation` - Access guided meditation
-- `/resources` - Get mental health resources
-- `/crisis` - Access emergency support
-- `/history` - View your conversation history
-- `/help` - Get help using SoulCare
-
-## 🧪 NLP Capabilities
-
-### Emotion Detection
-The chatbot can identify and respond to:
-- Joy, Sadness, Anger, Fear, Surprise, Disgust
-- Anxiety, Depression, Stress indicators
-- Suicidal ideation (triggers crisis protocol)
-
-### Intent Recognition
-- Seeking advice
-- Venting emotions
-- Learning coping strategies
-- Requesting resources
-- Emergency situations
-
-### Contextual Understanding
-- Remembers conversation history
-- Adapts responses based on user's emotional state
-- Personalizes recommendations over time
-- Detects topic shifts and follows user's lead
-
-## 📊 Features in Detail
-
-### Mood Tracking
-- Daily mood check-ins
-- Emotion intensity ratings (1-10)
-- Visual mood history graphs
-- Pattern identification and insights
-
-### Therapeutic Techniques
-- **CBT Exercises**: Thought challenging, cognitive restructuring
-- **Mindfulness**: Body scans, present moment awareness
-- **Breathing Techniques**: 4-7-8 breathing, box breathing
-- **Journaling Prompts**: Gratitude, reflection, goal-setting
-
-### Crisis Detection & Support
-- Automatic detection of crisis language
-- Immediate connection to crisis resources
-- National suicide prevention hotline
-- Local emergency services information
-- Safety planning tools
-
-## 🔐 Privacy & Ethics
-
-SoulCare is committed to user privacy and ethical AI:
-
-- ✅ **Confidential**: All conversations are encrypted and private
-- ✅ **Transparent**: Clear about AI limitations and when to seek professional help
-- ✅ **Non-diagnostic**: Does not diagnose or replace professional treatment
-- ✅ **Consent-based**: Users control their data
-- ✅ **Bias-aware**: Trained to be inclusive and culturally sensitive
-
-### Important Disclaimer
-
-**SoulCare is not a replacement for professional mental health care.** If you are experiencing a mental health crisis, please contact:
-- **National Suicide Prevention Lifeline**: 988 (US)
-- **Crisis Text Line**: Text HOME to 741741
-- **International**: Find resources at findahelpline.com
-
-## 📂 Project Structure
-
-```
-soulcare/
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py              # FastAPI application
-│   │   ├── models/              # Database models
-│   │   ├── api/                 # API routes
-│   │   ├── nlp/
-│   │   │   ├── intent_classifier.py
-│   │   │   ├── sentiment_analyzer.py
-│   │   │   ├── entity_extractor.py
-│   │   │   └── response_generator.py
-│   │   ├── chatbot/
-│   │   │   ├── conversation_manager.py
-│   │   │   ├── context_handler.py
-│   │   │   └── memory.py
-│   │   ├── therapy/
-│   │   │   ├── mood_tracker.py
-│   │   │   ├── cbt_engine.py
-│   │   │   ├── mindfulness.py
-│   │   │   └── crisis_detector.py
-│   │   └── utils/
-│   ├── tests/
-│   ├── requirements.txt
-│   └── .env
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── ChatInterface.tsx
-│   │   │   ├── MoodTracker.tsx
-│   │   │   └── ResourceLibrary.tsx
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   └── utils/
-│   ├── package.json
-│   └── .env.local
-├── models/                       # Trained NLP models
-├── data/                        # Training data
-├── docs/                        # Documentation
-├── scripts/                     # Utility scripts
-└── README.md
-```
-
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-# Backend tests
-pytest tests/ -v
-
-# NLP model evaluation
-python scripts/evaluate_models.py
-
-# Integration tests
-pytest tests/integration/ -v
-```
-
-## 🤝 Contributing
-
-We welcome contributions to make SoulCare better! Here's how:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and development process.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Mental health professionals who provided guidance
-- Open-source NLP community
-- Users who trusted us with their mental health journey
-- Research in AI ethics and mental health technology
-
-## 📞 Support
-
-- **Email**: support@soulcare.ai
-- **Discord**: [Join our community](https://discord.gg/soulcare)
-- **Documentation**: [docs.soulcare.ai](https://docs.soulcare.ai)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/soulcare/issues)
+### Machine Learning
+- **DistilBERT** (`bhadresh-savani/distilbert-base-uncased-emotion`)
+  - Pre-trained transformer model
+  - Fine-tuned for emotion classification
+  - 6 emotion classes with confidence scores
 
 ---
 
-<div align="center">
+## 🔗 API Endpoints
 
-**Built with ❤️ and compassion for mental wellness**
+### `POST /chat`
+Send a message and get AI response with emotion analysis.
 
-*Remember: You are not alone. Help is always available.*
+**Request:**
+```json
+{
+  "message": "I'm feeling really anxious today",
+  "session_id": "user_123"
+}
+```
 
-🌟 **If SoulCare helped you, please consider starring this repo!** 🌟
+**Response:**
+```json
+{
+  "response": "it's okay to feel scared sometimes. you're safe right now, I promise.",
+  "analysis": {
+    "emotion": "fear",
+    "confidence": 0.87,
+    "sentiment": "negative",
+    "intent": "sharing_feelings"
+  },
+  "crisis_detected": false,
+  "timestamp": "2026-01-19T10:30:00"
+}
+```
 
-</div>
+### `GET /history/<session_id>`
+Retrieve conversation history for a session.
+
+### `GET /emotions/<session_id>`
+Get emotion analytics and distribution over time.
+
+### `GET /resources`
+Get mental health resources and crisis helplines.
+
+### `GET /health`
+Health check endpoint to verify backend status.
+
+### `GET /`
+API information and available endpoints.
+
+---
+
+## 💡 Usage Examples
+
+### Basic Conversation
+```
+User: "hey"
+Bot: "hey! how's it going? 😊"
+
+User: "I'm feeling stressed about work"
+Bot: "I hear you. that sounds really hard. I'm here with you, no judgment at all."
+[Emotion detected: fear (78%)]
+```
+
+### Crisis Detection
+```
+User: "I don't want to live anymore"
+Bot: [Provides crisis resources immediately]
+📞 India: 9152987821 (AASRA)
+📞 US: 988 (Suicide & Crisis Lifeline)
+💛 You matter. Your life matters. Please reach out.
+```
+
+### Positive Interaction
+```
+User: "I got the job!"
+Bot: "omg yesss I'm so happy for you!! keep shining babe ✨"
+[Emotion detected: joy (95%)]
+```
+
+---
+
+## 🧪 Testing the Backend
+
+### Test with Browser
+Navigate to: `http://localhost:5000/health`
+
+Expected response:
+```json
+{
+  "status": "healthy",
+  "model_loaded": true,
+  "timestamp": "2026-01-19T10:00:00",
+  "version": "2.0.0"
+}
+```
+
+### Test with curl
+```bash
+curl -X POST http://localhost:5000/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "hello", "session_id": "test_123"}'
+```
+
+---
+
+## 🎨 Customization
+
+### Change Response Style
+Edit `SOFT_RESPONSES` and `GREETING_RESPONSES` in `app.py`:
+```python
+GREETING_RESPONSES = [
+    "hey! how's it going? 😊",
+    "hii! what's up? how are you feeling today?",
+    # Add your own responses here
+]
+```
+
+### Modify Emotion Detection
+The emotion model detects 6 emotions by default. To add custom emotion keywords for fallback mode, edit the `_fallback_predict` method in the `EmotionModel` class.
+
+### Customize UI Colors
+Edit the CSS gradient in `chat.html`:
+```css
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+```
+
+### Change Port
+In `app.py`:
+```python
+app.run(debug=True, host='0.0.0.0', port=5000)  # Change 5000 to your port
+```
+
+In `chat.html`:
+```javascript
+const API_URL = 'http://localhost:5000';  // Update port here too
+```
+
+---
+
+## 📊 NLP Model Details
+
+### Emotion Detection Model
+- **Name**: `bhadresh-savani/distilbert-base-uncased-emotion`
+- **Architecture**: DistilBERT (Distilled BERT)
+- **Training**: Fine-tuned on emotion classification dataset
+- **Classes**: sadness, joy, love, anger, fear, surprise
+- **Accuracy**: High confidence scores (0.0 - 1.0)
+- **Fallback**: Keyword-based detection if model fails to load
+
+### How It Works
+1. User message is tokenized using DistilBERT tokenizer
+2. Tokens are passed through the transformer model
+3. Model outputs logits for each emotion class
+4. Softmax converts logits to probabilities
+5. Highest probability emotion is selected
+6. Confidence score is returned
+
+---
+
+## 🔒 Privacy & Safety
+
+### Data Handling
+- Conversations stored in memory only (not persisted to disk)
+- No user data is logged or saved permanently
+- Session IDs are randomly generated client-side
+- No personal information is collected
+
+### Crisis Resources Included
+**India:**
+- AASRA: 9152987821
+- Vandrevala Foundation: 1860-2662-345
+- iCall: 9152987821
+
+**United States:**
+- Suicide & Crisis Lifeline: 988
+- Crisis Text Line: Text HOME to 741741
+
+**International:**
+- Links to country-specific resources provided
+
+---
+
+## 🚨 Troubleshooting
+
+### Backend won't start
+**Problem**: `ModuleNotFoundError: No module named 'flask'`
+**Solution**: Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Model download fails
+**Problem**: Can't download DistilBERT model
+**Solution**: Check internet connection, or model will use keyword fallback automatically
+
+### CORS errors in browser
+**Problem**: `Access to fetch blocked by CORS policy`
+**Solution**: Ensure `Flask-CORS` is installed
+```bash
+pip install Flask-CORS
+```
+
+### Frontend can't connect
+**Problem**: Status shows "Backend Offline"
+**Solution**: 
+1. Make sure backend is running (`python app.py`)
+2. Check URL matches: `http://localhost:5000`
+3. Try accessing `http://localhost:5000/health` directly in browser
+
+### "hi is not defined" error
+**Problem**: Old HTML file without JavaScript
+**Solution**: Use the complete `chat.html` file provided, not old template
+
+---
+
+## 🌐 Deployment
+
+### Development (Current Setup)
+```bash
+python app.py
+```
+
+### Production with Gunicorn
+```bash
+pip install gunicorn
+gunicorn -w 4 -b 0.0.0.0:5000 app:app
+```
+
+### Docker (Optional)
+Create `Dockerfile`:
+```dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY Backend/requirements.txt .
+RUN pip install -r requirements.txt
+COPY Backend/ .
+EXPOSE 5000
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
+```
+
+Build and run:
+```bash
+docker build -t soulcare .
+docker run -p 5000:5000 soulcare
+```
+
+### Environment Variables
+Create `.env` file:
+```
+FLASK_ENV=production
+SECRET_KEY=your-secret-key
+PORT=5000
+```
+
+---
+
+## 🎯 Future Enhancements
+
+### Planned Features
+- [ ] Database integration (PostgreSQL/MongoDB)
+- [ ] User authentication & profiles
+- [ ] Multi-language support
+- [ ] Voice input/output
+- [ ] Mood tracking over time
+- [ ] Personalized coping strategies
+- [ ] Integration with professional therapist directory
+- [ ] Mobile app (React Native)
+- [ ] Advanced sentiment analysis
+- [ ] Contextual follow-up questions
+
+### Model Improvements
+- [ ] Fine-tune on mental health specific dataset
+- [ ] Multi-label emotion detection
+- [ ] Emotion intensity scoring
+- [ ] Conversation history context awareness
+- [ ] Personalized response generation
+
+---
+
+## 📝 License
+
+This project is created for educational and mental health support purposes. Feel free to use, modify, and distribute with attribution.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve SoulCare:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+---
+
+## ⚠️ Disclaimer
+
+**SoulCare is NOT a replacement for professional mental health care.**
+
+This chatbot is designed to provide supportive conversation and emotional support, but it is not a substitute for therapy, counseling, or medical treatment. 
+
+**If you or someone you know is in crisis:**
+- Call emergency services (911 in US)
+- Contact a crisis helpline immediately
+- Reach out to a mental health professional
+- Go to the nearest emergency room
+
+SoulCare aims to be a supportive tool but cannot provide clinical diagnosis or treatment.
+
+---
+
+## 💖 Acknowledgments
+
+- **Hugging Face** - For the transformers library and pre-trained models
+- **Bhadresh Savani** - For the emotion classification model
+- **Mental health community** - For inspiration and feedback
+- **You** - For caring about mental wellness
+
+---
+
+## 📧 Contact & Support
+
+For questions, issues, or feedback:
+- Open an issue on GitHub
+- Reach out to the development team
+- Join our community discussions
+
+---
+
+## 🌟 Show Your Support
+
+If SoulCare helped you or someone you know, please:
+- ⭐ Star this repository
+- 🔄 Share with others who might benefit
+- 💬 Provide feedback for improvements
+- 🤝 Contribute to make it better
+
+**Together, we can make mental health support more accessible. 💙**
+
+---
+
+*Built with love for mental wellness* 💜
+
+*Version 2.0.0 | Last Updated: January 2026*
