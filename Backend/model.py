@@ -1,17 +1,21 @@
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-class EmotionModel:
-    def __init__(self):
-        self.model_name = "bhadresh-savani/distilbert-base-uncased-emotion"
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name)
-        self.labels = ["sadness", "joy", "love", "anger", "fear", "surprise"]
+model_name = "microsoft/phi-2"
 
-    def predict(self, text):
-        inputs = self.tokenizer(text, return_tensors="pt", truncation=True)
-        outputs = self.model(**inputs)
-        probs = torch.softmax(outputs.logits, dim=1)
-        label_id = torch.argmax(probs).item()
-        confidence = probs[0][label_id].item()
-        return self.labels[label_id], confidence
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.float32,
+    device_map="cpu"
+)
+
+def generate_reply(prompt: str):
+    inputs = tokenizer(prompt, return_tensors="pt")
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=150,
+        temperature=0.7,
+        do_sample=True
+    )
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
