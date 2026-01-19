@@ -6,6 +6,8 @@ SoulCare is an AI-powered mental wellness chatbot that uses NLP (Natural Languag
 
 ---
  🔗 View the live project here: [LIVE PROJECT](https://nikitaredy.github.io/soulcare/)
+ PS: It will take 10-20 secs built on RENDER😥
+ 
 ## 🌟 Features
 
 ### 🧠 **Advanced NLP Capabilities**
