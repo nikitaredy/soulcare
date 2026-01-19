@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "Backend/*.py", "use": "@vercel/python" },
-    { "src": "Frontend/*.html", "use": "@vercel/static" }
+    { "src": "index/*.html", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/", "dest": "/index.html" },
