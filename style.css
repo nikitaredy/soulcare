@@ -112,11 +112,12 @@
         }
         
 
-    .sc{
-        background-color: #000000;
-    }
+  .sc {
+    background-color: #000000;
+    padding: 60px 20px;
+}
 
-    .sc h2 {
+.sc h2 {
     padding-top: 20px;
     font-size: 56px;
     justify-content: center;
@@ -124,48 +125,58 @@
     margin-bottom: 20px;
     font-weight: 700;
     color: #ffffff;
-    }
+}
 
-    .sc p {
-    font-size:25px;
+.sc p {
+    font-size: 25px;
     text-align: center;
     color: #555454;
     margin-bottom: 40px;
-    }
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
 
-    .features {
+.features {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-     }
+    justify-content: center;
+    flex-wrap: nowrap; /* Changed from wrap to nowrap */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-   .feature-card {
-    background-color: #1c1c1c; /* Dark background for each box */
-    color: white; /* Text color */
-    padding: 30px;
-    width:20%; /* S a fixed width */
-    align-items: center;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+.feature-card {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 40px;
+    flex: 1; /* Equal width for all cards */
+    min-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    }
-    .feature-card:hover {
-        transform: translateY(-10px);
-        transform: scale(1.05); /* Slightly enlarges the box on hover */
-        box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Glowing effect on hover */
-    }
+}
 
-    .feature-card h2 {
-    font-size: 3rem;
-    font-weight: 400;
-     margin-bottom: 10px;
-    }
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+}
 
-    .feature-card p {
-    font-size: 18px;
-    color: #808080;
-     }
+.feature-card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.6;
+}
     .services {
     background-color: #000000;
     padding: 60px 20px;
